@@ -48,12 +48,34 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_Y_Point = new System.Windows.Forms.TextBox();
+            this.tb_X_Point = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.bt_pid_recive = new System.Windows.Forms.Button();
+            this.bt_pid_send = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tb_D = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tb_I = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tb_P = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.bt_line = new System.Windows.Forms.Button();
+            this.bt_center = new System.Windows.Forms.Button();
             this.groupBox_RxFormat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label_status
@@ -73,7 +95,7 @@
             this.button_disconnect.TabIndex = 34;
             this.button_disconnect.Text = "연결끊기";
             this.button_disconnect.UseVisualStyleBackColor = true;
-            this.button_disconnect.Click += new System.EventHandler(this.button_disconnect_Click_1);
+            this.button_disconnect.Click += new System.EventHandler(this.Button_disconnect_Click);
             // 
             // comboBox_port
             // 
@@ -91,6 +113,7 @@
             this.button_connect.TabIndex = 33;
             this.button_connect.Text = "연결하기";
             this.button_connect.UseVisualStyleBackColor = true;
+            this.button_connect.Click += new System.EventHandler(this.Button_connect_Click);
             // 
             // label_port
             // 
@@ -156,7 +179,6 @@
             this.TextBox_received.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.TextBox_received.Size = new System.Drawing.Size(297, 195);
             this.TextBox_received.TabIndex = 39;
-            this.TextBox_received.TextChanged += new System.EventHandler(this.TextBox_received_TextChanged);
             // 
             // textBox_send
             // 
@@ -164,7 +186,6 @@
             this.textBox_send.Name = "textBox_send";
             this.textBox_send.Size = new System.Drawing.Size(204, 21);
             this.textBox_send.TabIndex = 36;
-            this.textBox_send.TextChanged += new System.EventHandler(this.textBox_send_TextChanged);
             // 
             // button_send
             // 
@@ -174,7 +195,7 @@
             this.button_send.TabIndex = 37;
             this.button_send.Text = "보내기";
             this.button_send.UseVisualStyleBackColor = true;
-            this.button_send.Click += new System.EventHandler(this.button_send_Click_1);
+            this.button_send.Click += new System.EventHandler(this.Button_send_Click);
             // 
             // label_send
             // 
@@ -190,7 +211,7 @@
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Location = new System.Drawing.Point(6, 46);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(448, 312);
+            this.pictureBox1.Size = new System.Drawing.Size(448, 258);
             this.pictureBox1.TabIndex = 42;
             this.pictureBox1.TabStop = false;
             // 
@@ -218,12 +239,12 @@
             // 
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.tb_Y_Point);
+            this.groupBox2.Controls.Add(this.tb_X_Point);
             this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(461, 374);
+            this.groupBox2.Size = new System.Drawing.Size(461, 316);
             this.groupBox2.TabIndex = 44;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ball_Display";
@@ -246,29 +267,226 @@
             this.label1.TabIndex = 45;
             this.label1.Text = "X";
             // 
-            // textBox2
+            // tb_Y_Point
             // 
-            this.textBox2.Location = new System.Drawing.Point(267, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 21);
-            this.textBox2.TabIndex = 44;
+            this.tb_Y_Point.Location = new System.Drawing.Point(267, 19);
+            this.tb_Y_Point.Name = "tb_Y_Point";
+            this.tb_Y_Point.Size = new System.Drawing.Size(100, 21);
+            this.tb_Y_Point.TabIndex = 44;
             // 
-            // textBox1
+            // tb_X_Point
             // 
-            this.textBox1.Location = new System.Drawing.Point(89, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 43;
+            this.tb_X_Point.Location = new System.Drawing.Point(89, 19);
+            this.tb_X_Point.Name = "tb_X_Point";
+            this.tb_X_Point.Size = new System.Drawing.Size(100, 21);
+            this.tb_X_Point.TabIndex = 43;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.bt_pid_recive);
+            this.groupBox3.Controls.Add(this.bt_pid_send);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.tb_D);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.tb_I);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.tb_P);
+            this.groupBox3.Location = new System.Drawing.Point(12, 333);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(461, 115);
+            this.groupBox3.TabIndex = 45;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "PID상수";
+            // 
+            // bt_pid_recive
+            // 
+            this.bt_pid_recive.Location = new System.Drawing.Point(236, 69);
+            this.bt_pid_recive.Name = "bt_pid_recive";
+            this.bt_pid_recive.Size = new System.Drawing.Size(115, 23);
+            this.bt_pid_recive.TabIndex = 53;
+            this.bt_pid_recive.Text = "데이터 가져오기";
+            this.bt_pid_recive.UseVisualStyleBackColor = true;
+            this.bt_pid_recive.Click += new System.EventHandler(this.bt_pid_recive_Click);
+            // 
+            // bt_pid_send
+            // 
+            this.bt_pid_send.Location = new System.Drawing.Point(53, 69);
+            this.bt_pid_send.Name = "bt_pid_send";
+            this.bt_pid_send.Size = new System.Drawing.Size(111, 23);
+            this.bt_pid_send.TabIndex = 52;
+            this.bt_pid_send.Text = "데이터 보내기";
+            this.bt_pid_send.UseVisualStyleBackColor = true;
+            this.bt_pid_send.Click += new System.EventHandler(this.bt_pid_send_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(298, 32);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(13, 12);
+            this.label5.TabIndex = 51;
+            this.label5.Text = "D";
+            // 
+            // tb_D
+            // 
+            this.tb_D.Location = new System.Drawing.Point(317, 27);
+            this.tb_D.Name = "tb_D";
+            this.tb_D.Size = new System.Drawing.Size(100, 21);
+            this.tb_D.TabIndex = 50;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(154, 32);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(8, 12);
+            this.label4.TabIndex = 49;
+            this.label4.Text = "I";
+            // 
+            // tb_I
+            // 
+            this.tb_I.Location = new System.Drawing.Point(173, 27);
+            this.tb_I.Name = "tb_I";
+            this.tb_I.Size = new System.Drawing.Size(100, 21);
+            this.tb_I.TabIndex = 48;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(14, 32);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(13, 12);
+            this.label3.TabIndex = 47;
+            this.label3.Text = "P";
+            // 
+            // tb_P
+            // 
+            this.tb_P.Location = new System.Drawing.Point(33, 27);
+            this.tb_P.Name = "tb_P";
+            this.tb_P.Size = new System.Drawing.Size(100, 21);
+            this.tb_P.TabIndex = 46;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.button10);
+            this.groupBox4.Controls.Add(this.button9);
+            this.groupBox4.Controls.Add(this.button8);
+            this.groupBox4.Controls.Add(this.button7);
+            this.groupBox4.Controls.Add(this.button6);
+            this.groupBox4.Controls.Add(this.button5);
+            this.groupBox4.Controls.Add(this.button4);
+            this.groupBox4.Controls.Add(this.button3);
+            this.groupBox4.Controls.Add(this.bt_line);
+            this.groupBox4.Controls.Add(this.bt_center);
+            this.groupBox4.Location = new System.Drawing.Point(12, 456);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(871, 100);
+            this.groupBox4.TabIndex = 46;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "패턴 선택";
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(762, 20);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(75, 63);
+            this.button10.TabIndex = 9;
+            this.button10.Text = "원점";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(681, 20);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(75, 63);
+            this.button9.TabIndex = 8;
+            this.button9.Text = "원점";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(600, 20);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 63);
+            this.button8.TabIndex = 7;
+            this.button8.Text = "원점";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(519, 20);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 63);
+            this.button7.TabIndex = 6;
+            this.button7.Text = "원점";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(438, 20);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 63);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "원점";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(357, 20);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 63);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "원점";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(276, 20);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 63);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "원점";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(195, 20);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 63);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "원점";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // bt_line
+            // 
+            this.bt_line.Location = new System.Drawing.Point(114, 20);
+            this.bt_line.Name = "bt_line";
+            this.bt_line.Size = new System.Drawing.Size(75, 63);
+            this.bt_line.TabIndex = 1;
+            this.bt_line.Text = "원점";
+            this.bt_line.UseVisualStyleBackColor = true;
+            // 
+            // bt_center
+            // 
+            this.bt_center.Location = new System.Drawing.Point(33, 20);
+            this.bt_center.Name = "bt_center";
+            this.bt_center.Size = new System.Drawing.Size(75, 63);
+            this.bt_center.TabIndex = 0;
+            this.bt_center.Text = "원점";
+            this.bt_center.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 461);
+            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox_RxFormat.ResumeLayout(false);
             this.groupBox_RxFormat.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -276,6 +494,9 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -299,10 +520,30 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_X_Point;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tb_Y_Point;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button bt_line;
+        private System.Windows.Forms.Button bt_center;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox tb_D;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox tb_I;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tb_P;
+        private System.Windows.Forms.Button bt_pid_recive;
+        private System.Windows.Forms.Button bt_pid_send;
     }
 }
 

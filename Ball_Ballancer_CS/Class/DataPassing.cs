@@ -9,9 +9,9 @@ namespace Ball_Ballancer_CS.Class
     public class DataPassing
     {
         public static readonly byte
-        ROLL  = 0,
-        PITCH = 1,
-        YAW   = 2;
+        P  = 0,
+        I = 1,
+        D   = 2;
 
         List<byte> recvData = new List<byte>();
         byte[] buff = new byte[1024];
@@ -19,7 +19,7 @@ namespace Ball_Ballancer_CS.Class
         int cnt = 0;
         byte checksum = 0xff;
 
-        float[] attitude = new float[3];
+        float[] pid = new float[3];
 
         public DataPassing()
         {
@@ -40,7 +40,7 @@ namespace Ball_Ballancer_CS.Class
                 switch (cnt)
                 {
                     case 0:
-                        if (buff[i] == 0x46)
+                        if (buff[i] == 0x47)
                         {
                             buff_pass[cnt] = buff[i];
                             cnt++;
@@ -48,7 +48,7 @@ namespace Ball_Ballancer_CS.Class
                         break;
 
                     case 1:
-                        if (buff[i] == 0x43)
+                        if (buff[i] == 0x53)
                         {
                             buff_pass[cnt] = buff[i];
                             cnt++;
@@ -75,10 +75,10 @@ namespace Ball_Ballancer_CS.Class
 
         public float[] Passing()
         {
-            attitude[ROLL] = BitConverter.ToInt16(buff_pass, 3) / 100;
-            attitude[PITCH] = BitConverter.ToInt16(buff_pass, 5) / 100;
-            attitude[YAW] = BitConverter.ToInt16(buff_pass, 7) / 100;
-            return attitude;
+            pid[P] = BitConverter.ToInt16(buff_pass, 3) / 100;
+            pid[I] = BitConverter.ToInt16(buff_pass, 5) / 100;
+            pid[D] = BitConverter.ToInt16(buff_pass, 7) / 100;
+            return pid;
         }
 
         ~DataPassing()
