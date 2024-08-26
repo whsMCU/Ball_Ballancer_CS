@@ -1,0 +1,10 @@
+C:\Users\jjins\Documents\Project\Ball_Ballancer_CS\Ball_Ballancer_CS\bin\Debug\Ball_Ballancer_CS.exe.config
+C:\Users\jjins\Documents\Project\Ball_Ballancer_CS\Ball_Ballancer_CS\bin\Debug\Ball_Ballancer_CS.exe
+C:\Users\jjins\Documents\Project\Ball_Ballancer_CS\Ball_Ballancer_CS\bin\Debug\Ball_Ballancer_CS.pdb
+C:\Users\jjins\Documents\Project\Ball_Ballancer_CS\Ball_Ballancer_CS\obj\Debug\Ball_Ballancer_CS.csproj.AssemblyReference.cache
+C:\Users\jjins\Documents\Project\Ball_Ballancer_CS\Ball_Ballancer_CS\obj\Debug\Ball_Ballancer_CS.Form1.resources
+C:\Users\jjins\Documents\Project\Ball_Ballancer_CS\Ball_Ballancer_CS\obj\Debug\Ball_Ballancer_CS.Properties.Resources.resources
+C:\Users\jjins\Documents\Project\Ball_Ballancer_CS\Ball_Ballancer_CS\obj\Debug\Ball_Ballancer_CS.csproj.GenerateResource.cache
+C:\Users\jjins\Documents\Project\Ball_Ballancer_CS\Ball_Ballancer_CS\obj\Debug\Ball_Ballancer_CS.csproj.CoreCompileInputs.cache
+C:\Users\jjins\Documents\Project\Ball_Ballancer_CS\Ball_Ballancer_CS\obj\Debug\Ball_Ballancer_CS.exe
+C:\Users\jjins\Documents\Project\Ball_Ballancer_CS\Ball_Ballancer_CS\obj\Debug\Ball_Ballancer_CS.pdb
