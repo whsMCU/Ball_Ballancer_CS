@@ -108,11 +108,6 @@ namespace Ball_Ballancer_CS
             }
         }
 
-        private void CB_Enable_Terminal_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void bt_pid_recive_Click(object sender, EventArgs e)
         {
             serialPort1.Write(textBox_send.Text);  //텍스트박스의 텍스트를 시리얼통신으로 송신

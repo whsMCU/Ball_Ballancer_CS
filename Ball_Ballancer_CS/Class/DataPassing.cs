@@ -40,15 +40,31 @@ namespace Ball_Ballancer_CS.Class
                 switch (cnt)
                 {
                     case 0:
-                        if (buff[i] == 0x47)
+                        if (buff[i] == 0x46)
                         {
                             buff_pass[cnt] = buff[i];
                             cnt++;
                         }
+                        else
+                        {
+                            cnt = 0;
+                        }
                         break;
 
                     case 1:
-                        if (buff[i] == 0x53)
+                        if (buff[i] == 0x43)
+                        {
+                            buff_pass[cnt] = buff[i];
+                            cnt++;
+                        }
+                        else
+                        {
+                            cnt = 0;
+                        }
+                        break;
+
+                    case 2:
+                        if (buff[i] == 0x10)
                         {
                             buff_pass[cnt] = buff[i];
                             cnt++;
@@ -75,9 +91,9 @@ namespace Ball_Ballancer_CS.Class
 
         public float[] Passing()
         {
-            pid[P] = BitConverter.ToInt16(buff_pass, 3) / 100;
-            pid[I] = BitConverter.ToInt16(buff_pass, 5) / 100;
-            pid[D] = BitConverter.ToInt16(buff_pass, 7) / 100;
+            pid[P] = BitConverter.ToInt16(buff_pass, 3);
+            pid[I] = BitConverter.ToInt16(buff_pass, 5);
+            pid[D] = BitConverter.ToInt16(buff_pass, 7);
             return pid;
         }
 

@@ -167,7 +167,6 @@
             this.CB_Enable_Terminal.TabIndex = 40;
             this.CB_Enable_Terminal.Text = "Enable Terminal";
             this.CB_Enable_Terminal.UseVisualStyleBackColor = true;
-            this.CB_Enable_Terminal.CheckedChanged += new System.EventHandler(this.CB_Enable_Terminal_CheckedChanged);
             // 
             // TextBox_received
             // 
