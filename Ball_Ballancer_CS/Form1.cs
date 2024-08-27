@@ -149,33 +149,37 @@ namespace Ball_Ballancer_CS
         private void bt_pid_send_Click(object sender, EventArgs e)
         {
             byte[] buff = new byte[20];
-            byte[] float_buff = new byte[4];
+            float float_buff;
+            byte[] tmp = new byte[4];
             try
             {
                 buff[0] = 0x47;
                 buff[1] = 0x53;
                 buff[2] = 0x11;
-                float_buff = Encoding.UTF8.GetBytes(tb_P.Text);
-                buff[3] = float_buff[0];
-                buff[4] = float_buff[1];
-                buff[5] = float_buff[2];
-                buff[6] = float_buff[3];
-                float_buff = Encoding.UTF8.GetBytes(tb_I.Text);
-                buff[7] = float_buff[0];
-                buff[8] = float_buff[1];
-                buff[9] = float_buff[2];
-                buff[10] = float_buff[3];
-                float_buff = Encoding.UTF8.GetBytes(tb_D.Text);
-                buff[11] = float_buff[0];
-                buff[12] = float_buff[1];
-                buff[13] = float_buff[2];
-                buff[14] = float_buff[3];
+                float_buff = float.Parse(tb_P.Text);
+                tmp = BitConverter.GetBytes(float_buff);
+                buff[3] = tmp[0];
+                buff[4] = tmp[1];
+                buff[5] = tmp[2];
+                buff[6] = tmp[3];
+                float_buff = float.Parse(tb_I.Text);
+                tmp = BitConverter.GetBytes(float_buff);
+                buff[7] = tmp[0];
+                buff[8] = tmp[1];
+                buff[9] = tmp[2];
+                buff[10] = tmp[3];
+                float_buff = float.Parse(tb_D.Text);
+                tmp = BitConverter.GetBytes(float_buff);
+                buff[11] = tmp[0];
+                buff[12] = tmp[1];
+                buff[13] = tmp[2];
+                buff[14] = tmp[3];
                 buff[15] = 0;
                 buff[16] = 0;
                 buff[17] = 0;
                 buff[18] = 0;
                 buff[19] = 0xff;
-            }catch { }
+            } catch { }
 
             for(int i=0; i < 19;i++)
             {
@@ -185,9 +189,7 @@ namespace Ball_Ballancer_CS
             try
             {
                 serialPort1.Write(Encoding.UTF8.GetString(buff));
-            }
-            catch { }
-
+            } catch { }
         }
 
         private void bt_Clear_Click(object sender, EventArgs e)
