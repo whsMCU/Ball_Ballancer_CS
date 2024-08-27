@@ -43,7 +43,7 @@
             this.textBox_send = new System.Windows.Forms.TextBox();
             this.button_send = new System.Windows.Forms.Button();
             this.label_send = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pb_Ball_Display = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -70,8 +70,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.bt_line = new System.Windows.Forms.Button();
             this.bt_center = new System.Windows.Forms.Button();
+            this.bt_Clear = new System.Windows.Forms.Button();
+            this.bt_Dsp_Clear = new System.Windows.Forms.Button();
             this.groupBox_RxFormat.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Ball_Display)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -161,7 +163,7 @@
             // CB_Enable_Terminal
             // 
             this.CB_Enable_Terminal.AutoSize = true;
-            this.CB_Enable_Terminal.Location = new System.Drawing.Point(262, 181);
+            this.CB_Enable_Terminal.Location = new System.Drawing.Point(96, 181);
             this.CB_Enable_Terminal.Name = "CB_Enable_Terminal";
             this.CB_Enable_Terminal.Size = new System.Drawing.Size(117, 16);
             this.CB_Enable_Terminal.TabIndex = 40;
@@ -205,17 +207,20 @@
             this.label_send.TabIndex = 38;
             this.label_send.Text = "송신";
             // 
-            // pictureBox1
+            // pb_Ball_Display
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 46);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(448, 258);
-            this.pictureBox1.TabIndex = 42;
-            this.pictureBox1.TabStop = false;
+            this.pb_Ball_Display.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pb_Ball_Display.Location = new System.Drawing.Point(6, 46);
+            this.pb_Ball_Display.Name = "pb_Ball_Display";
+            this.pb_Ball_Display.Size = new System.Drawing.Size(448, 258);
+            this.pb_Ball_Display.TabIndex = 42;
+            this.pb_Ball_Display.TabStop = false;
+            this.pb_Ball_Display.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pb_Ball_Display_MouseDown);
+            this.pb_Ball_Display.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pb_Ball_Display_MouseMove);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.bt_Clear);
             this.groupBox1.Controls.Add(this.label_port);
             this.groupBox1.Controls.Add(this.button_connect);
             this.groupBox1.Controls.Add(this.TextBox_received);
@@ -236,11 +241,12 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.bt_Dsp_Clear);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.tb_Y_Point);
             this.groupBox2.Controls.Add(this.tb_X_Point);
-            this.groupBox2.Controls.Add(this.pictureBox1);
+            this.groupBox2.Controls.Add(this.pb_Ball_Display);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(461, 316);
@@ -251,7 +257,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(248, 22);
+            this.label2.Location = new System.Drawing.Point(170, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(13, 12);
             this.label2.TabIndex = 46;
@@ -260,7 +266,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(70, 22);
+            this.label1.Location = new System.Drawing.Point(28, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(13, 12);
             this.label1.TabIndex = 45;
@@ -268,14 +274,14 @@
             // 
             // tb_Y_Point
             // 
-            this.tb_Y_Point.Location = new System.Drawing.Point(267, 19);
+            this.tb_Y_Point.Location = new System.Drawing.Point(189, 19);
             this.tb_Y_Point.Name = "tb_Y_Point";
             this.tb_Y_Point.Size = new System.Drawing.Size(100, 21);
             this.tb_Y_Point.TabIndex = 44;
             // 
             // tb_X_Point
             // 
-            this.tb_X_Point.Location = new System.Drawing.Point(89, 19);
+            this.tb_X_Point.Location = new System.Drawing.Point(47, 19);
             this.tb_X_Point.Name = "tb_X_Point";
             this.tb_X_Point.Size = new System.Drawing.Size(100, 21);
             this.tb_X_Point.TabIndex = 43;
@@ -474,6 +480,26 @@
             this.bt_center.Text = "원점";
             this.bt_center.UseVisualStyleBackColor = true;
             // 
+            // bt_Clear
+            // 
+            this.bt_Clear.Location = new System.Drawing.Point(284, 174);
+            this.bt_Clear.Name = "bt_Clear";
+            this.bt_Clear.Size = new System.Drawing.Size(95, 23);
+            this.bt_Clear.TabIndex = 42;
+            this.bt_Clear.Text = "터미널 지우기";
+            this.bt_Clear.UseVisualStyleBackColor = true;
+            this.bt_Clear.Click += new System.EventHandler(this.bt_Clear_Click);
+            // 
+            // bt_Dsp_Clear
+            // 
+            this.bt_Dsp_Clear.Location = new System.Drawing.Point(325, 17);
+            this.bt_Dsp_Clear.Name = "bt_Dsp_Clear";
+            this.bt_Dsp_Clear.Size = new System.Drawing.Size(116, 23);
+            this.bt_Dsp_Clear.TabIndex = 43;
+            this.bt_Dsp_Clear.Text = "터치패널 지우기";
+            this.bt_Dsp_Clear.UseVisualStyleBackColor = true;
+            this.bt_Dsp_Clear.Click += new System.EventHandler(this.bt_Dsp_Clear_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -488,7 +514,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox_RxFormat.ResumeLayout(false);
             this.groupBox_RxFormat.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Ball_Display)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -516,7 +542,7 @@
         private System.Windows.Forms.TextBox textBox_send;
         private System.Windows.Forms.Button button_send;
         private System.Windows.Forms.Label label_send;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pb_Ball_Display;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox tb_X_Point;
@@ -543,6 +569,8 @@
         private System.Windows.Forms.TextBox tb_P;
         private System.Windows.Forms.Button bt_pid_recive;
         private System.Windows.Forms.Button bt_pid_send;
+        private System.Windows.Forms.Button bt_Clear;
+        private System.Windows.Forms.Button bt_Dsp_Clear;
     }
 }
 

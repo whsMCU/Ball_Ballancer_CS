@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,9 +10,12 @@ namespace Ball_Ballancer_CS.Class
     public class DataPassing
     {
         public static readonly byte
-        P  = 0,
-        I = 1,
-        D   = 2;
+        P  = 1,
+        I  = 2,
+        D  = 3,
+        X  = 1,
+        Y  = 2,
+        Z  = 3;
 
         List<byte> recvData = new List<byte>();
         byte[] buff = new byte[1024];
@@ -19,7 +23,7 @@ namespace Ball_Ballancer_CS.Class
         int cnt = 0;
         byte checksum = 0xff;
 
-        float[] pid = new float[3];
+        float[] data = new float[4];
 
         public DataPassing()
         {
@@ -32,8 +36,9 @@ namespace Ball_Ballancer_CS.Class
             this.checksum = checksum;
         }
 
-        public float[] dataRecive(byte[] data, int size)
+        public float[] dataPassing(byte[] data, int size)
         {
+            bool recived_data_flag = false;
             Array.Copy(data, buff, size);
             for (int i = 0; i < size; i++)
             {
@@ -63,21 +68,10 @@ namespace Ball_Ballancer_CS.Class
                         }
                         break;
 
-                    case 2:
-                        if (buff[i] == 0x10)
-                        {
-                            buff_pass[cnt] = buff[i];
-                            cnt++;
-                        }
-                        else
-                        {
-                            cnt = 0;
-                        }
-                        break;
-
                     case 19:
                         buff_pass[cnt] = buff[i];
                         cnt = 0;
+                        recived_data_flag = true;
                         break;
 
                     default:
@@ -86,15 +80,32 @@ namespace Ball_Ballancer_CS.Class
                         break;
                 }
             }
-            return Passing();
+            if(recived_data_flag == true)
+            {
+
+                return Passing();
+            }
+            return null;
         }
 
         public float[] Passing()
         {
-            pid[P] = BitConverter.ToInt16(buff_pass, 3);
-            pid[I] = BitConverter.ToInt16(buff_pass, 5);
-            pid[D] = BitConverter.ToInt16(buff_pass, 7);
-            return pid;
+            if (buff_pass[2] == 0x10) //터치패널 좌표 데이터 수신
+            {
+                data[0] = 0;
+                data[X] = BitConverter.ToInt16(buff_pass, 3);
+                data[Y] = BitConverter.ToInt16(buff_pass, 5);
+                data[Z] = BitConverter.ToInt16(buff_pass, 7);
+            }
+            else if (buff_pass[2] == 0x11) // PID 게인값 수신
+            {
+                data[0] = 1;
+                data[P] = BitConverter.ToInt16(buff_pass, 3);
+                data[I] = BitConverter.ToInt16(buff_pass, 5);
+                data[D] = BitConverter.ToInt16(buff_pass, 7);
+            }
+
+            return data;
         }
 
         ~DataPassing()
