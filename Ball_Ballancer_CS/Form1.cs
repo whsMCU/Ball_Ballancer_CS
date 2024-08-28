@@ -18,6 +18,9 @@ namespace Ball_Ballancer_CS
         private ArrayList al;
         private Point p;
 
+        float[] pb_point = new float[2];
+        float[] pb_point_pre = new float[2];
+
         public Form1()
         {
             InitializeComponent();
@@ -66,7 +69,11 @@ namespace Ball_Ballancer_CS
 
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)  //수신 이벤트가 발생하면 이 부분이 실행된다.
         {
-            this.Invoke(new EventHandler(MySerialReceived));  //메인 쓰레드와 수신 쓰레드의 충돌 방지를 위해 Invoke 사용. MySerialReceived로 이동하여 추가 작업 실행.
+            try
+            {
+                this.Invoke(new EventHandler(MySerialReceived));  //메인 쓰레드와 수신 쓰레드의 충돌 방지를 위해 Invoke 사용. MySerialReceived로 이동하여 추가 작업 실행.
+            }
+            catch { }
         }
 
         private void MySerialReceived(object s, EventArgs e)  //여기에서 수신 데이타를 사용자의 용도에 따라 처리한다.
@@ -90,8 +97,15 @@ namespace Ball_Ballancer_CS
                             {
                                 tb_X_Point.Text = passed_data[1].ToString();
                                 tb_Y_Point.Text = passed_data[2].ToString();
+
+                                pb_point[0] = map(passed_data[1], 60, 950, 0, 448);
+                                pb_point[1] = map(passed_data[2], 85, 920, 258, 0);
+
                                 Graphics g = pb_Ball_Display.CreateGraphics();
-                                g.DrawLine(Pens.Black, passed_data[1], passed_data[2], passed_data[1], passed_data[2]);
+                                g.DrawLine(Pens.Black, pb_point_pre[0], pb_point_pre[1], pb_point[0], pb_point[1]);
+                                pb_point_pre[0] = pb_point[0];
+                                pb_point_pre[1] = pb_point[1];
+                                g.Dispose();
                             }
                             else if(passed_data[0] == 1)
                             {
@@ -197,7 +211,7 @@ namespace Ball_Ballancer_CS
             {
                 buff[0] = 0x47;
                 buff[1] = 0x53;
-                buff[2] = 0x11;
+                buff[2] = 0x00;
                 float_buff = float.Parse(tb_P.Text);
                 tmp = BitConverter.GetBytes(float_buff);
                 buff[3] = tmp[0];
@@ -228,9 +242,10 @@ namespace Ball_Ballancer_CS
                 buff[19] -= buff[i];
             }
             TextBox_received.AppendText(Encoding.UTF8.GetString(buff));
+            TextBox_received.AppendText("\r\n");
             try
             {
-                serialPort1.Write(Encoding.UTF8.GetString(buff));
+                serialPort1.Write(buff,0,20);
             } catch { }
         }
 
@@ -263,6 +278,11 @@ namespace Ball_Ballancer_CS
         private void bt_Dsp_Clear_Click(object sender, EventArgs e)
         {
             pb_Ball_Display.Image = null;
+        }
+
+        public float map(float x, float in_min, float in_max, float out_min, float out_max)
+        {
+            return ((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min);
         }
     }
 }

@@ -97,12 +97,12 @@ namespace Ball_Ballancer_CS.Class
                 data[Y] = BitConverter.ToInt16(buff_pass, 5);
                 data[Z] = BitConverter.ToInt16(buff_pass, 7);
             }
-            else if (buff_pass[2] == 0x11) // PID 게인값 수신
+            else if (buff_pass[2] == 0x20) // PID 게인값 수신
             {
                 data[0] = 1;
-                data[P] = BitConverter.ToInt16(buff_pass, 3);
-                data[I] = BitConverter.ToInt16(buff_pass, 5);
-                data[D] = BitConverter.ToInt16(buff_pass, 7);
+                data[P] = BitConverter.ToSingle(buff_pass, 3);
+                data[I] = BitConverter.ToSingle(buff_pass, 7);
+                data[D] = BitConverter.ToSingle(buff_pass, 11);
             }
 
             return data;

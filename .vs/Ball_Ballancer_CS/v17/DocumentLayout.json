@@ -36,9 +36,10 @@
               "RelativeDocumentMoniker": "Ball_Ballancer_CS\\Class\\DataPassing.cs",
               "ToolTip": "D:\\Project\\Ball_Ballancer_CS\\Ball_Ballancer_CS\\Class\\DataPassing.cs",
               "RelativeToolTip": "Ball_Ballancer_CS\\Class\\DataPassing.cs",
-              "ViewState": "AQIAADEAAAAAAAAAAAAuwEkAAAAkAAAA",
+              "ViewState": "AQIAAFsAAAAAAAAAAAAAAGwAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-26T12:25:38.383Z"
+              "WhenOpened": "2024-08-26T12:25:38.383Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -50,19 +51,20 @@
               "RelativeToolTip": "Ball_Ballancer_CS\\Form1.Designer.cs",
               "ViewState": "AQIAAJ4AAAAAAAAAAAAowLMAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-26T12:25:38.423Z"
+              "WhenOpened": "2024-08-26T12:25:38.423Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Form1.cs [Design]",
+              "Title": "Form1.cs [\uB514\uC790\uC778]",
               "DocumentMoniker": "D:\\Project\\Ball_Ballancer_CS\\Ball_Ballancer_CS\\Form1.cs",
               "RelativeDocumentMoniker": "Ball_Ballancer_CS\\Form1.cs",
-              "ToolTip": "D:\\Project\\Ball_Ballancer_CS\\Ball_Ballancer_CS\\Form1.cs [Design]",
-              "RelativeToolTip": "Ball_Ballancer_CS\\Form1.cs [Design]",
+              "ToolTip": "D:\\Project\\Ball_Ballancer_CS\\Ball_Ballancer_CS\\Form1.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "Ball_Ballancer_CS\\Form1.cs [\uB514\uC790\uC778]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-26T12:25:38.425Z",
-              "EditorCaption": " [Design]"
+              "EditorCaption": " [\uB514\uC790\uC778]"
             },
             {
               "$type": "Document",
@@ -72,7 +74,7 @@
               "RelativeDocumentMoniker": "Ball_Ballancer_CS\\Form1.cs",
               "ToolTip": "D:\\Project\\Ball_Ballancer_CS\\Ball_Ballancer_CS\\Form1.cs",
               "RelativeToolTip": "Ball_Ballancer_CS\\Form1.cs",
-              "ViewState": "AQIAAKEAAAAAAAAAAAASwL4AAAAQAAAA",
+              "ViewState": "AQIAAKAAAAAAAAAAAAAowK0AAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-26T12:25:38.555Z",
               "EditorCaption": ""
