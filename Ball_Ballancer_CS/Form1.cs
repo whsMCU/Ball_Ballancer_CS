@@ -90,6 +90,8 @@ namespace Ball_Ballancer_CS
                             {
                                 tb_X_Point.Text = passed_data[1].ToString();
                                 tb_Y_Point.Text = passed_data[2].ToString();
+                                Graphics g = pb_Ball_Display.CreateGraphics();
+                                g.DrawLine(Pens.Black, passed_data[1], passed_data[2], passed_data[1], passed_data[2]);
                             }
                             else if(passed_data[0] == 1)
                             {
@@ -104,12 +106,14 @@ namespace Ball_Ballancer_CS
                         {
                             string strTemp = this.UTF8.AddBytes(buff.ToList()).Replace("\r", "").Replace("\n", Environment.NewLine);
                             TextBox_received.AppendText(strTemp);
+                            TextBox_received.AppendText("\r\n");
 
                         }
 
                         if (this.CB_Enable_Terminal.Checked && this.radioButton_HEX.Checked)
                         {
                             TextBox_received.AppendText(BitConverter.ToString(buff).Replace("-", " ") + " ");
+                            TextBox_received.AppendText("\r\n");
                         }
                     }
                     catch { }
@@ -122,7 +126,11 @@ namespace Ball_Ballancer_CS
 
         private void Button_send_Click(object sender, EventArgs e)  //보내기 버튼을 클릭하면
         {
-            serialPort1.Write(textBox_send.Text);  //텍스트박스의 텍스트를 시리얼통신으로 송신
+            try
+            {
+                serialPort1.Write(textBox_send.Text);  //텍스트박스의 텍스트를 시리얼통신으로 송신
+            }
+            catch{}
         }
 
         private void Button_disconnect_Click(object sender, EventArgs e)  //통신 연결끊기 버튼
@@ -143,7 +151,41 @@ namespace Ball_Ballancer_CS
         private void bt_pid_recive_Click(object sender, EventArgs e)
         {
             byte[] buff = new byte[20];
-            serialPort1.Write(textBox_send.Text);  //텍스트박스의 텍스트를 시리얼통신으로 송신
+            try
+            {
+                buff[0] = 0x47;
+                buff[1] = 0x53;
+                buff[2] = 0x10;
+                buff[3] = 0;
+                buff[4] = 0;
+                buff[5] = 0;
+                buff[6] = 0;
+                buff[7] = 0;
+                buff[8] = 0;
+                buff[9] = 0;
+                buff[10] = 0;
+                buff[11] = 0;
+                buff[12] = 0;
+                buff[13] = 0;
+                buff[14] = 0;
+                buff[15] = 0;
+                buff[16] = 0;
+                buff[17] = 0;
+                buff[18] = 0;
+                buff[19] = 0xff;
+            }
+            catch { }
+
+            for (int i = 0; i < 19; i++)
+            {
+                buff[19] -= buff[i];
+            }
+            TextBox_received.AppendText(Encoding.UTF8.GetString(buff));
+            try
+            {
+                serialPort1.Write(Encoding.UTF8.GetString(buff));
+            }
+            catch { }
         }
 
         private void bt_pid_send_Click(object sender, EventArgs e)
