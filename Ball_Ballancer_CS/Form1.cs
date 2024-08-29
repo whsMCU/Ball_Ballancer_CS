@@ -21,6 +21,19 @@ namespace Ball_Ballancer_CS
         float[] pb_point = new float[2];
         float[] pb_point_pre = new float[2];
 
+        public enum pattern_TypeDef
+        {
+            PID_pattern = 0,
+            line_pattern,
+            triangle_pattern,
+            square_pattern,
+            pinBall_pattern,
+            ellipse_pattern,
+            sinusoidal_pattern,
+            figure8_pattern,
+            DEMO_pattern
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -283,6 +296,51 @@ namespace Ball_Ballancer_CS
         public float map(float x, float in_min, float in_max, float out_min, float out_max)
         {
             return ((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min);
+        }
+
+        private void bt_center_Click(object sender, EventArgs e)
+        {
+            pattern_cmd(pattern_TypeDef.PID_pattern);
+        }
+
+        public void pattern_cmd(byte mode)
+        {
+            byte[] buff = new byte[20];
+            try
+            {
+                buff[0] = 0x47;
+                buff[1] = 0x53;
+                buff[2] = 0x30;
+                buff[3] = mode;
+                buff[4] = 0;
+                buff[5] = 0;
+                buff[6] = 0;
+                buff[7] = 0;
+                buff[8] = 0;
+                buff[9] = 0;
+                buff[10] = 0;
+                buff[11] = 0;
+                buff[12] = 0;
+                buff[13] = 0;
+                buff[14] = 0;
+                buff[15] = 0;
+                buff[16] = 0;
+                buff[17] = 0;
+                buff[18] = 0;
+                buff[19] = 0xff;
+            }
+            catch { }
+
+            for (int i = 0; i < 19; i++)
+            {
+                buff[19] -= buff[i];
+            }
+            TextBox_received.AppendText(Encoding.UTF8.GetString(buff));
+            try
+            {
+                serialPort1.Write(Encoding.UTF8.GetString(buff));
+            }
+            catch { }
         }
     }
 }

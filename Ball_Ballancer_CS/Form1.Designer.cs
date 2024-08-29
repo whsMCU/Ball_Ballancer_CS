@@ -62,14 +62,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tb_P = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.bt_demo = new System.Windows.Forms.Button();
+            this.bt_figure8 = new System.Windows.Forms.Button();
+            this.bt_sinusoidal = new System.Windows.Forms.Button();
+            this.bt_ellipse = new System.Windows.Forms.Button();
+            this.bt_pinball = new System.Windows.Forms.Button();
+            this.bt_square = new System.Windows.Forms.Button();
+            this.bt_triangle = new System.Windows.Forms.Button();
             this.bt_line = new System.Windows.Forms.Button();
             this.bt_center = new System.Windows.Forms.Button();
             this.groupBox_RxFormat.SuspendLayout();
@@ -393,14 +392,13 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.button10);
-            this.groupBox4.Controls.Add(this.button9);
-            this.groupBox4.Controls.Add(this.button8);
-            this.groupBox4.Controls.Add(this.button7);
-            this.groupBox4.Controls.Add(this.button6);
-            this.groupBox4.Controls.Add(this.button5);
-            this.groupBox4.Controls.Add(this.button4);
-            this.groupBox4.Controls.Add(this.button3);
+            this.groupBox4.Controls.Add(this.bt_demo);
+            this.groupBox4.Controls.Add(this.bt_figure8);
+            this.groupBox4.Controls.Add(this.bt_sinusoidal);
+            this.groupBox4.Controls.Add(this.bt_ellipse);
+            this.groupBox4.Controls.Add(this.bt_pinball);
+            this.groupBox4.Controls.Add(this.bt_square);
+            this.groupBox4.Controls.Add(this.bt_triangle);
             this.groupBox4.Controls.Add(this.bt_line);
             this.groupBox4.Controls.Add(this.bt_center);
             this.groupBox4.Location = new System.Drawing.Point(12, 456);
@@ -410,95 +408,87 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "패턴 선택";
             // 
-            // button10
+            // bt_demo
             // 
-            this.button10.Location = new System.Drawing.Point(762, 20);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 63);
-            this.button10.TabIndex = 9;
-            this.button10.Text = "원점";
-            this.button10.UseVisualStyleBackColor = true;
+            this.bt_demo.Location = new System.Drawing.Point(760, 20);
+            this.bt_demo.Name = "bt_demo";
+            this.bt_demo.Size = new System.Drawing.Size(75, 63);
+            this.bt_demo.TabIndex = 8;
+            this.bt_demo.Text = "데모";
+            this.bt_demo.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // bt_figure8
             // 
-            this.button9.Location = new System.Drawing.Point(681, 20);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 63);
-            this.button9.TabIndex = 8;
-            this.button9.Text = "원점";
-            this.button9.UseVisualStyleBackColor = true;
+            this.bt_figure8.Location = new System.Drawing.Point(667, 20);
+            this.bt_figure8.Name = "bt_figure8";
+            this.bt_figure8.Size = new System.Drawing.Size(75, 63);
+            this.bt_figure8.TabIndex = 7;
+            this.bt_figure8.Text = "그림8";
+            this.bt_figure8.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // bt_sinusoidal
             // 
-            this.button8.Location = new System.Drawing.Point(600, 20);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 63);
-            this.button8.TabIndex = 7;
-            this.button8.Text = "원점";
-            this.button8.UseVisualStyleBackColor = true;
+            this.bt_sinusoidal.Location = new System.Drawing.Point(574, 20);
+            this.bt_sinusoidal.Name = "bt_sinusoidal";
+            this.bt_sinusoidal.Size = new System.Drawing.Size(75, 63);
+            this.bt_sinusoidal.TabIndex = 6;
+            this.bt_sinusoidal.Text = "정현파";
+            this.bt_sinusoidal.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // bt_ellipse
             // 
-            this.button7.Location = new System.Drawing.Point(519, 20);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 63);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "원점";
-            this.button7.UseVisualStyleBackColor = true;
+            this.bt_ellipse.Location = new System.Drawing.Point(481, 20);
+            this.bt_ellipse.Name = "bt_ellipse";
+            this.bt_ellipse.Size = new System.Drawing.Size(75, 63);
+            this.bt_ellipse.TabIndex = 5;
+            this.bt_ellipse.Text = "타원";
+            this.bt_ellipse.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // bt_pinball
             // 
-            this.button6.Location = new System.Drawing.Point(438, 20);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 63);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "원점";
-            this.button6.UseVisualStyleBackColor = true;
+            this.bt_pinball.Location = new System.Drawing.Point(388, 20);
+            this.bt_pinball.Name = "bt_pinball";
+            this.bt_pinball.Size = new System.Drawing.Size(75, 63);
+            this.bt_pinball.TabIndex = 4;
+            this.bt_pinball.Text = "볼링";
+            this.bt_pinball.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // bt_square
             // 
-            this.button5.Location = new System.Drawing.Point(357, 20);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 63);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "원점";
-            this.button5.UseVisualStyleBackColor = true;
+            this.bt_square.Location = new System.Drawing.Point(295, 20);
+            this.bt_square.Name = "bt_square";
+            this.bt_square.Size = new System.Drawing.Size(75, 63);
+            this.bt_square.TabIndex = 3;
+            this.bt_square.Text = "사각형";
+            this.bt_square.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // bt_triangle
             // 
-            this.button4.Location = new System.Drawing.Point(276, 20);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 63);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "원점";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(195, 20);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 63);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "원점";
-            this.button3.UseVisualStyleBackColor = true;
+            this.bt_triangle.Location = new System.Drawing.Point(202, 20);
+            this.bt_triangle.Name = "bt_triangle";
+            this.bt_triangle.Size = new System.Drawing.Size(75, 63);
+            this.bt_triangle.TabIndex = 2;
+            this.bt_triangle.Text = "삼각형";
+            this.bt_triangle.UseVisualStyleBackColor = true;
             // 
             // bt_line
             // 
-            this.bt_line.Location = new System.Drawing.Point(114, 20);
+            this.bt_line.Location = new System.Drawing.Point(109, 20);
             this.bt_line.Name = "bt_line";
             this.bt_line.Size = new System.Drawing.Size(75, 63);
             this.bt_line.TabIndex = 1;
-            this.bt_line.Text = "원점";
+            this.bt_line.Text = "라인";
             this.bt_line.UseVisualStyleBackColor = true;
             // 
             // bt_center
             // 
-            this.bt_center.Location = new System.Drawing.Point(33, 20);
+            this.bt_center.Location = new System.Drawing.Point(16, 20);
             this.bt_center.Name = "bt_center";
             this.bt_center.Size = new System.Drawing.Size(75, 63);
             this.bt_center.TabIndex = 0;
             this.bt_center.Text = "원점";
             this.bt_center.UseVisualStyleBackColor = true;
+            this.bt_center.Click += new System.EventHandler(this.bt_center_Click);
             // 
             // Form1
             // 
@@ -551,16 +541,15 @@
         private System.Windows.Forms.TextBox tb_Y_Point;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button bt_pinball;
+        private System.Windows.Forms.Button bt_square;
+        private System.Windows.Forms.Button bt_triangle;
         private System.Windows.Forms.Button bt_line;
         private System.Windows.Forms.Button bt_center;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button bt_demo;
+        private System.Windows.Forms.Button bt_figure8;
+        private System.Windows.Forms.Button bt_sinusoidal;
+        private System.Windows.Forms.Button bt_ellipse;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tb_D;
         private System.Windows.Forms.Label label4;
