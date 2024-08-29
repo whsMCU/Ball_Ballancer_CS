@@ -416,6 +416,7 @@
             this.bt_demo.TabIndex = 8;
             this.bt_demo.Text = "데모";
             this.bt_demo.UseVisualStyleBackColor = true;
+            this.bt_demo.Click += new System.EventHandler(this.bt_demo_Click);
             // 
             // bt_figure8
             // 
@@ -425,6 +426,7 @@
             this.bt_figure8.TabIndex = 7;
             this.bt_figure8.Text = "그림8";
             this.bt_figure8.UseVisualStyleBackColor = true;
+            this.bt_figure8.Click += new System.EventHandler(this.bt_figure8_Click);
             // 
             // bt_sinusoidal
             // 
@@ -434,6 +436,7 @@
             this.bt_sinusoidal.TabIndex = 6;
             this.bt_sinusoidal.Text = "정현파";
             this.bt_sinusoidal.UseVisualStyleBackColor = true;
+            this.bt_sinusoidal.Click += new System.EventHandler(this.bt_sinusoidal_Click);
             // 
             // bt_ellipse
             // 
@@ -443,6 +446,7 @@
             this.bt_ellipse.TabIndex = 5;
             this.bt_ellipse.Text = "타원";
             this.bt_ellipse.UseVisualStyleBackColor = true;
+            this.bt_ellipse.Click += new System.EventHandler(this.bt_ellipse_Click);
             // 
             // bt_pinball
             // 
@@ -452,6 +456,7 @@
             this.bt_pinball.TabIndex = 4;
             this.bt_pinball.Text = "볼링";
             this.bt_pinball.UseVisualStyleBackColor = true;
+            this.bt_pinball.Click += new System.EventHandler(this.bt_pinball_Click);
             // 
             // bt_square
             // 
@@ -461,6 +466,7 @@
             this.bt_square.TabIndex = 3;
             this.bt_square.Text = "사각형";
             this.bt_square.UseVisualStyleBackColor = true;
+            this.bt_square.Click += new System.EventHandler(this.bt_square_Click);
             // 
             // bt_triangle
             // 
@@ -470,6 +476,7 @@
             this.bt_triangle.TabIndex = 2;
             this.bt_triangle.Text = "삼각형";
             this.bt_triangle.UseVisualStyleBackColor = true;
+            this.bt_triangle.Click += new System.EventHandler(this.bt_triangle_Click);
             // 
             // bt_line
             // 
@@ -479,6 +486,7 @@
             this.bt_line.TabIndex = 1;
             this.bt_line.Text = "라인";
             this.bt_line.UseVisualStyleBackColor = true;
+            this.bt_line.Click += new System.EventHandler(this.bt_line_Click);
             // 
             // bt_center
             // 

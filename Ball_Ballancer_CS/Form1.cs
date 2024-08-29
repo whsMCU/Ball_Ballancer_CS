@@ -21,7 +21,7 @@ namespace Ball_Ballancer_CS
         float[] pb_point = new float[2];
         float[] pb_point_pre = new float[2];
 
-        public enum pattern_TypeDef
+        public enum pattern_TypeDef : byte
         {
             PID_pattern = 0,
             line_pattern,
@@ -298,11 +298,6 @@ namespace Ball_Ballancer_CS
             return ((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min);
         }
 
-        private void bt_center_Click(object sender, EventArgs e)
-        {
-            pattern_cmd(pattern_TypeDef.PID_pattern);
-        }
-
         public void pattern_cmd(byte mode)
         {
             byte[] buff = new byte[20];
@@ -341,6 +336,50 @@ namespace Ball_Ballancer_CS
                 serialPort1.Write(Encoding.UTF8.GetString(buff));
             }
             catch { }
+        }
+        private void bt_center_Click(object sender, EventArgs e)
+        {
+            pattern_cmd((byte)pattern_TypeDef.PID_pattern);
+        }
+
+        private void bt_line_Click(object sender, EventArgs e)
+        {
+            pattern_cmd((byte)pattern_TypeDef.line_pattern);
+        }
+
+        private void bt_triangle_Click(object sender, EventArgs e)
+        {
+            pattern_cmd((byte)pattern_TypeDef.triangle_pattern);
+        }
+
+        private void bt_square_Click(object sender, EventArgs e)
+        {
+            pattern_cmd((byte)pattern_TypeDef.square_pattern);
+        }
+
+        private void bt_pinball_Click(object sender, EventArgs e)
+        {
+            pattern_cmd((byte)pattern_TypeDef.pinBall_pattern);
+        }
+
+        private void bt_ellipse_Click(object sender, EventArgs e)
+        {
+            pattern_cmd((byte)pattern_TypeDef.ellipse_pattern);
+        }
+
+        private void bt_sinusoidal_Click(object sender, EventArgs e)
+        {
+            pattern_cmd((byte)pattern_TypeDef.sinusoidal_pattern);
+        }
+
+        private void bt_figure8_Click(object sender, EventArgs e)
+        {
+            pattern_cmd((byte)pattern_TypeDef.figure8_pattern);
+        }
+
+        private void bt_demo_Click(object sender, EventArgs e)
+        {
+            pattern_cmd((byte)pattern_TypeDef.DEMO_pattern);
         }
     }
 }
