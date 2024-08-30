@@ -19,7 +19,7 @@ namespace Ball_Ballancer_CS
         private Point p;
 
         float[] pb_point = new float[2];
-        float[] pb_point_pre = new float[2];
+        //float[] pb_point_pre = new float[2];
 
         public enum pattern_TypeDef : byte
         {
@@ -110,15 +110,17 @@ namespace Ball_Ballancer_CS
                             {
                                 tb_X_Point.Text = passed_data[1].ToString();
                                 tb_Y_Point.Text = passed_data[2].ToString();
+                                if (passed_data[1] != 0)
+                                {
+                                    pb_point[0] = map(passed_data[1], 60, 950, 0, 448);
+                                    pb_point[1] = map(passed_data[2], 85, 920, 258, 0);
 
-                                pb_point[0] = map(passed_data[1], 60, 950, 0, 448);
-                                pb_point[1] = map(passed_data[2], 85, 920, 258, 0);
-
-                                Graphics g = pb_Ball_Display.CreateGraphics();
-                                g.DrawLine(Pens.Black, pb_point_pre[0], pb_point_pre[1], pb_point[0], pb_point[1]);
-                                pb_point_pre[0] = pb_point[0];
-                                pb_point_pre[1] = pb_point[1];
-                                g.Dispose();
+                                    Graphics g = pb_Ball_Display.CreateGraphics();
+                                    g.DrawLine(Pens.Black, pb_point[0]-1, pb_point[1]-1, pb_point[0], pb_point[1]);
+                                    //pb_point_pre[0] = pb_point[0];
+                                    //pb_point_pre[1] = pb_point[1];
+                                    g.Dispose();
+                                }
                             }
                             else if(passed_data[0] == 1)
                             {
